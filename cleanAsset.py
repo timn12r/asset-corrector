@@ -55,7 +55,7 @@ def corrections(uid):
             print("CPU already cleaned/no matching CPU criteria found.")
             return None
     
-    def clean_battery(wear):
+    def clean_up_battery(wear):
         match = re.search(battery_pattern, wear)
         if match:
             print('Battery wear already correctly formatted.')
@@ -66,7 +66,7 @@ def corrections(uid):
 
     #check for formatting on battery and CPU
     cleaned_cpu = clean_up_cpu(cpu_type)
-    cleaned_battery = clean_battery(battery_wear)
+    cleaned_battery = clean_up_battery(battery_wear)
     if cleaned_cpu:
         cpu_attr['value'] = cleaned_cpu
     if cleaned_battery:
